@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | BleikerQuizzen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="../assets/image/logo.png" alt="BleikerQuizzen logo">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="grafisk-profil.html">Grafisk profil</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="some.html">SoMe</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="quiz-box">
+      <div id="start-screen" class="quiz-panel">
+        <div class="quiz-intro">
+          <h1>Quiz</h1>
+          <p>Skriv navnet ditt og velg klasse for å starte quizen. Du kan velge hvilken som helst klasse og svare på alle spørsmålene.</p>
+        </div>
+
+        <div class="quiz-form">
+          <input type="text" id="username" placeholder="Navnet ditt">
+
+          <select id="class-select">
+            <option value="">Velg klasse</option>
+            <option value="elektro">Elektro og datateknologi</option>
+            <option value="helse">Helse- og oppvekstfag</option>
+            <option value="idrett">Idrettsfag</option>
+            <option value="media">Medier og kommunikasjon</option>
+            <option value="pabygg">Påbygging til generell studiekompetanse</option>
+            <option value="salg">Salg, service og reiseliv</option>
+            <option value="teknologi">Teknologi- og industrifag</option>
+            <option value="it">Informasjonsteknologi og medieproduksjon</option>
+            <option value="kombi">Kombinasjonsklasse</option>
+            <option value="demokrati">Demokrati og medborgerskap</option>
+          </select>
+
+          <button class="btn" id="start-btn">Start quiz</button>
+        </div>
+      </div>
+
+      <div id="quiz-screen" class="hidden quiz-panel">
+        <h1 id="quiz-title">Quiz</h1>
+        <p id="progress"></p>
+
+        <div id="video-container" class="hidden">
+          <video controls class="main-video">
+            <source src="../assets/video/bleiker-video.mp4" type="video/mp4">
+            Nettleseren din støtter ikke video.
+          </video>
+        </div>
+
+        <h2 id="question" class="question-card"></h2>
+        <div id="answers" class="answer-grid"></div>
+        <p id="feedback"></p>
+        <button class="btn hidden" id="next-btn">Neste spørsmål</button>
+      </div>
+
+      <div id="result-screen" class="hidden quiz-panel result-panel">
+        <h1>Ferdig!</h1>
+        <p id="final-score"></p>
+        <h2>Highscore Top 5</h2>
+        <ol id="highscore-list"></ol>
+        <button class="btn" onclick="location.reload()">Spill igjen</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>Laget av elever på Bleiker</div>
+    <div>BleikerQuizzen</div>
+    <div>Kontakt: bleikerquizzen@skole.no</div>
+  </footer>
+
+  <script src="../js/quis.js"></script>
+</body>
+</html>
